@@ -11,7 +11,8 @@ class Commissary extends Controller
      */
     public function index()
     {
-        //
+        $commissaries = Commissary::all();
+        return view('commissaries\index' , ['commissaries' => $commissaries]);
     }
 
     /**

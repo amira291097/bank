@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use  App\Http\Controllers\CommissaryController;
 
 /*
 |--------------------------------------------------------------------------
@@ -26,3 +27,5 @@ Route::middleware([
         return view('dashboard');
     })->name('dashboard');
 });
+Route::resource('/commissaries', CommissaryController::class);
+	Route::get('commissaries/remove/{id}', [CommissaryController::class,  'removeCommissary']);
